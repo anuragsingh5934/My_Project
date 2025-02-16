@@ -1,0 +1,117 @@
+# car workshop
+
+
+def wheel_modi():
+    print(f"Welcome to WHEEL WORKSHOP..")
+    avl_wheel = [
+  "Alloy Wheels",  
+  "Steel Wheels",  
+  "Forged Wheels",  
+  "Carbon Fiber Wheels",  
+  "Split-Rim Wheels",  
+  "Spinner Wheels",  
+  "Deep-Dish Wheels",  
+  "Off-Road Wheels",  
+  "Chrome Wheels",  
+  "Custom Painted or Powder-Coated Wheels"
+    ]
+    for wheel in avl_wheel:
+        print(f"\nHere is the list of wheel available")
+        print(wheel)
+        select_wheel = input("\nWrite name of wheel You Want - ")
+        print(f"\nCongratulation we are adding {select_wheel.upper()} wheels in your vehicle.")
+    return select_wheel
+
+def payment_gatway():
+    payment_sys = True
+    while payment_sys:
+        print(f'Welcom to payment Gateway plateform.')
+        card_name = input("enter your name as menstioned in your card - ")
+        card_number = input("Enter Your card number - ")
+        card_cvv = int(input("enter 3 digit ccv -"))
+        if card_cvv >= 999:
+            print("\nWrong CVV code")
+        
+        card_pin = input("\nenter your pin - ")
+        print(f"\nYour card name is {card_name}.\nCard number is - {card_number}.\nCard CVV is {card_cvv}. ")
+        verify_pin = input("\nverify your Pin again to payment - ")
+        if verify_pin == card_pin:
+            OTP = input(f"\nPin verification is done.\nEnter OTP - ")
+            print("payment done")
+            break
+        else:
+            break
+    print("Payment done successfully")
+
+def car_details(owner_name,car_name,buy_year,cc,color,known_prob='',modificaton=''):
+    double = int(cc) * 2
+    dou = int(cc) * 1.5
+    '''car details and service log'''
+    if modificaton == 'y':
+        level_of_mod = input('level of modification you want (1-3) - ' )
+        if level_of_mod == '3':
+            ask_oem = input("Want OEM modification (y/n) - ")
+            if ask_oem == 'y':
+                oem_car_modification(car_model_name=owner_name, car_model_year=buy_year,)
+            enter = input("You have to pay 60000 coins (tap enter)\n")
+            print(f"We are Processing Your {car_name.upper()} car for modification of level 3.\nIn which we install extream level kits.\n")
+            print(f"Engine size will be upgraded form {cc}cc to {double}cc. Which boost you driving thrill.\n")
+            print(f"we change your {color.upper()} to racing Red blue yellow strip.\n")
+            payment_ask = input(f"MR {owner_name.upper()}. Want to pay? (y/n)")
+            if payment_ask =='y':
+                payment_gatway()
+            
+        elif level_of_mod == '2':
+            enter = input("You have to pay 3000 coins (tap enter)\n")
+            print(f"We are Processing Your {car_name.upper()} car for modification of level 2.\nIn which we install medium level kits.\n")
+            print(f"Engine size will be same and we add turbo boost and you get performence of {dou}cc form {cc}cc. Which boost you driving thrill.\n")
+            print(f"we change your {color.upper()} to racing Red blue.\n")
+            payment_ask = input(f"MR {owner_name.upper()}. Want to pay? (y/n)")
+            if payment_ask =='y':
+                payment_gatway()
+
+        elif level_of_mod == '1':
+            enter = input("You have to pay 1000 coins (tap enter)\n")
+            print(f"We are Processing Your {car_name.upper()} car for modification of level 2.\nIn which we install low level kits.\n")
+            print(f"Engine size will be same.\n")
+            payment_ask = input(f"MR {owner_name.upper()}. Want to pay? (y/n)")
+            if payment_ask =='y':
+                payment_gatway()
+        else:
+            print("enter a valid keyword")
+    else:
+        pass
+    car = {'owner name':owner_name, 'car name': car_name, 'year of purchase': buy_year,'engine size': cc,'car color': color, 'known priblen': known_prob, 'modification': modificaton}
+    return car
+
+
+in_car_name = input("Inter Your car name - ")
+in_car_owner = input('car owner name - ')
+in_year = input("car year - ")
+in_cc =input("car cc - ")
+in_car_color = input("car color - ")
+in_car_prob = input("car problem - ")
+in_modification = input("want any modification (y/n) - ")
+
+carapp = car_details(in_car_owner,in_car_name,in_year,in_cc,in_car_color,in_car_prob,in_modification)
+
+
+def oem_car_modification(car_model_name, car_model_year,):
+    '''Wheel modification function'''
+    oem_fun = True
+
+    print(f"\n\t\tWELCOME TO OEM MODIFICATION.\n\nProvide Infomation for Modification")
+    usr_name = input("Your name\n ")
+    if usr_name != '':
+        oem_fun = True
+    else:
+        oem_fun =False
+
+    while oem_fun:
+        print(f"\n\n\tHello Mr {usr_name.upper()}")
+        strt = input(f"Where to start for modification\n\n---LIST---WHEEL\nENGINE\n\BODY")
+        if strt.upper() == "WHEEL":
+            wheel_modi()
+        elif strt.upper() == 'ENGINE':
+            import zzzengine_modification
+            
