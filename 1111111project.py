@@ -51,29 +51,6 @@ def car_details(owner_name,car_name,buy_year,cc,color,known_prob='',modificaton=
             print(f"{key.capitalize()} is {value.upper()}.")
 
 
-car_list = [
-    "Swift",  
-    "Creta",  
-    "Scorpio",  
-    "Nexon",  
-    "Baleno",  
-    "Seltos",  
-    "Innova Crysta",  
-    "City",  
-    "i20",  
-    "Harrier",  
-    "Ertiga",  
-    "Kwid",  
-    "EcoSport",  
-    "Polo",  
-    "Rapid",  
-    "Hector",  
-    "Magnite",  
-    "Vitara Brezza",  
-    "Fortuner",  
-    "Thar"  
-]
-
 from pyment import *
 print("\n\t\tWELCOME\n\t\tFILL ALL AREA")
 in_car_name = input("Enter Your car name - ")
