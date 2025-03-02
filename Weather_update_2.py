@@ -45,6 +45,7 @@ except KeyError:
 c_temp = int((f_temp - 32) * 5/9)
 c_feel = int((f_feel - 32) * 5/9)
 
+### fail  to Implement ####
 # import pint as p
 # unit_reg = p.UnitRegistry()
 # f_temp = int(info["main"]["temp"]) * unit_reg.degF
